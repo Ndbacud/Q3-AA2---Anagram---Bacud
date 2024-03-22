@@ -1,0 +1,33 @@
+<html>
+<head>
+</head>
+<body>
+    <script>
+        function anagram(input1, input2){
+            let s1 = input1.toLowerCase().replace(/\s/g, '');
+            let s2 = input2.toLowerCase().replace(/\s/g, '');
+
+            if (s1.length !== s2.length){
+                return false;
+            }
+
+            let fixedS1 = s1.split('').sort().join('');
+            let fixedS2 = s2.split('').sort().join('');
+
+            return fixedS1 === fixedS2;
+        }
+
+        let w1 = prompt("Enter the first word: ");
+        let w2 = prompt("Enter the second word: ");
+
+        if (anagram(w1,w2)){
+            alert(w1 + " and " + w2 + "  are anagrams!");
+        }
+        else{
+            alert(w1 + " and " + w2 + " are NOT anagrams.");
+        }
+
+
+    </script>
+</body>
+</html>
